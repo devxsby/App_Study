@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var computerBallCountLbl: UILabel!
     @IBOutlet weak var userBallCountLbl: UILabel!
     @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var imageContainer: UIView!
+    @IBOutlet weak var fistImage: UIImageView!
     
     var comBallCount: Int = 20
     var userBallCount: Int = 20
@@ -26,18 +28,29 @@ class ViewController: UIViewController {
         
         computerBallCountLbl.text = String(comBallCount)
         userBallCountLbl.text = String(userBallCount)
+        self.imageContainer.isHidden = true
+        
     }
 
     @IBAction func gameStartPressed(_ sender: Any) {
-        print("게임 시작 ~~!")
-        //print(self.getRandom())
+        self.imageContainer.isHidden = false
         
-        let alert = UIAlertController.init(title: "GAME START", message: "홀 짝을 선택해주세요.", preferredStyle: .alert) // actionSheet : 하단에서 나오는거
+        UIView.animate(withDuration: 3.0) {
+            self.fistImage.transform = CGAffineTransform(scaleX: 5, y: 5)
+            self.fistImage.transform = CGAffineTransform(scaleX: 1, y: 1)
+        } completion: { _ in
+            self.imageContainer.isHidden = true
+            self.showAlert()
+        }
+    }
+    
+    func showAlert(){
+        let alert = UIAlertController.init(title: "GAME START", message: "홀 짝을 선택해주세요.", preferredStyle: .alert) // actionSheet : 하단에서 나오는 거
         
         let oddBtn = UIAlertAction.init(title: "홀", style: .default) { _ in
             print("홀 버튼을 클릭했습니다.")
             
-            // guard문에 value 변환 합쳐서 적기 ㅎㅎ
+            // guard문에 value 변환 합쳐서 적기
             guard let input = alert.textFields?.first?.text, let value = Int(input) else {
                 return
             }
@@ -48,7 +61,7 @@ class ViewController: UIViewController {
         let evenBtn = UIAlertAction.init(title: "짝", style: .default) { _ in
             print("짝 버튼을 클릭했습니다.")
             
-            // guard문에 value 변환 따로 적기 ㅎㅎ
+            // guard문에 value 변환 따로 적기
             guard let input = alert.textFields?.first?.text else {
                 return
             }
@@ -81,23 +94,37 @@ class ViewController: UIViewController {
         if comType == select {
             print("User Win")
             result = result + "(User Win)"
+            self.resultLbl.text = result
             self.calculateBalls(winner: "user", count: count)
         }else{
             print("Computer Win")
             result = result + "(Computer Win)"
+            self.resultLbl.text = result
             self.calculateBalls(winner: "com", count: count)
         }
-        
-        self.resultLbl.text = result
     }
     
-    func calculateBalls(winner: String, count: Int){ // count: 사용자가 입력한 개수
+    func checkAccountEmpty(balls: Int) -> Bool {
+        return balls == 0
+    }
+    
+    func calculateBalls(winner: String, count: Int){
+        
         if winner == "user" {
             self.userBallCount = self.userBallCount + count
             self.comBallCount = self.comBallCount - count
+            
+            if self.checkAccountEmpty(balls: self.comBallCount) {
+                self.resultLbl.text = "사용자 최종승리"
+        }
+            
         }else{
             self.userBallCount = self.userBallCount - count
             self.comBallCount = self.comBallCount + count
+            
+            if self.checkAccountEmpty(balls: self.userBallCount) {
+                self.resultLbl.text = "컴퓨터 최종승리"
+            }
         }
         
         self.userBallCountLbl.text = "\(self.userBallCount)"
