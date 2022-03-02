@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  OddEvenGame
+//  LifeCycle
 //
-//  Created by 윤수빈 on 2022/02/21.
+//  Created by 윤수빈 on 2022/03/02.
 //
 
 import UIKit
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "OddEvenGame")
+        let container = NSPersistentContainer(name: "LifeCycle")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

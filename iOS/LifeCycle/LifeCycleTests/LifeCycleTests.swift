@@ -1,14 +1,14 @@
 //
-//  OddEvenGameTests.swift
-//  OddEvenGameTests
+//  LifeCycleTests.swift
+//  LifeCycleTests
 //
-//  Created by 윤수빈 on 2022/02/21.
+//  Created by 윤수빈 on 2022/03/02.
 //
 
 import XCTest
-@testable import OddEvenGame
+@testable import LifeCycle
 
-class OddEvenGameTests: XCTestCase {
+class LifeCycleTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
