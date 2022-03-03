@@ -5,16 +5,15 @@
 //  Created by subinyoon on 2022/02/23.
 //
 /*
- 1. 음악파일을 추가한다.
- 2. AVFoundation 프레임워크를 추가한다.
- 3. AVAudioPlayer 객체를 만들어 음악을 실행시켜본다.
+ 1. 설정페이지를 만들어 구슬갯수를 사용자가 변경할 수 있도록 한다.
+ 2. Delegate pattern을 사용하여 데이터 전달을 해본다.
  */
 
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, SettingDelegate {
+    
     @IBOutlet weak var computerBallCountLbl: UILabel!
     @IBOutlet weak var userBallCountLbl: UILabel!
     @IBOutlet weak var resultLbl: UILabel!
@@ -68,6 +67,16 @@ class ViewController: UIViewController {
             self.imageContainer.isHidden = true
             self.showAlert()
         }
+    }
+    
+    
+    @IBAction func settingBtnPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let settingVC = storyboard.instantiateViewController(identifier: "SettingViewController") as! SettingViewController
+        settingVC.settingDelegate = self
+        settingVC.modalPresentationStyle = .fullScreen
+        self.present(settingVC, animated: true, completion: nil)
+        
     }
     
     func showAlert(){
@@ -157,5 +166,9 @@ class ViewController: UIViewController {
     
     func getRandom() -> Int {
         return Int(arc4random_uniform(10) + 1)
+    }
+    func getBallsCount(ballsCount: Int) {
+        self.userBallCountLbl.text = "\(ballsCount)"
+        self.computerBallCountLbl.text = "\(ballsCount)"
     }
 }
