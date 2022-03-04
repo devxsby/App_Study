@@ -4,10 +4,6 @@
 //
 //  Created by subinyoon on 2022/02/23.
 //
-/*
- 1. 설정페이지를 만들어 구슬갯수를 사용자가 변경할 수 있도록 한다.
- 2. Delegate pattern을 사용하여 데이터 전달을 해본다.
- */
 
 import UIKit
 import AVFoundation
