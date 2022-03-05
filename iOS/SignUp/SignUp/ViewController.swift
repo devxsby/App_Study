@@ -8,8 +8,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UserInfoDelegate {
     @IBOutlet weak var userEmailTextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     
@@ -32,6 +31,18 @@ class ViewController: UIViewController {
             }
         }
     }
+    @IBAction func SignUpRegisterBtn(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signupVC = storyboard.instantiateViewController(identifier: "SignUpViewController") as! SignUpViewController
+        
+        signupVC.delegate = self
+        self.present(signupVC, animated: true, completion: nil)
+    }
     
+    func getUserInfo(email: String, password: String) {
+        print("userEmail \(email) , userPassword \(password) ")
+        self.userEmailTextField.text = email
+        self.userPasswordTextField.text = password
+    }
 }
 
