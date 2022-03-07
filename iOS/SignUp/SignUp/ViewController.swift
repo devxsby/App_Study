@@ -30,8 +30,10 @@ class ViewController: UIViewController, UserInfoDelegate, UserLogDelegate {
                 let board = UIStoryboard(name: "Main", bundle: nil)
                 let signoutVC = board.instantiateViewController(identifier: "SignOutViewController") as! SignOutViewController
                 signoutVC.userLogDelegate = self
-                signoutVC.modalPresentationStyle = .fullScreen
+                //signoutVC.modalPresentationStyle = .fullScreen
                 self?.present(signoutVC, animated: true, completion: nil)
+                self?.userEmailTextField.text = nil
+                self?.userPasswordTextField.text = nil
             } else {
                 self?.showAlert()
                 print("로그인 실패", error?.localizedDescription ?? "")

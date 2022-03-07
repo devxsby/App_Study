@@ -34,9 +34,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().createUser(withEmail: signUpEmail, password: signUpPassword) { [self] authResult, error in
             print(error?.localizedDescription as Any)
-            // 이메일, 비밀번호 전송
+    
             guard let user = authResult?.user, error == nil else { return }
-            
             print("\(user.email!) 회원가입 완료")
             self.dismiss(animated: true, completion: nil)
         }

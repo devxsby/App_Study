@@ -24,9 +24,14 @@ class SignOutViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
-            self.loginEmail.text = "\(String(describing: Auth.auth().currentUser))"
-            }
+            let user = Auth.auth().currentUser
+            self.loginEmail.text = "\(String(describing: user?.email))"
         }
+    }
+    
+    @IBAction func confirmBtnPressed(_ sender: UIButton) {
+        // 여기부터~~~~~시작
+    }
     
     @IBAction func logOutBtnPressed(_ sender: UIButton) {
         

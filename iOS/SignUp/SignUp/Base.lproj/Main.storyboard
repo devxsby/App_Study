@@ -140,7 +140,17 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
                                 <connections>
-                                    <action selector="logOutBtnPressed:" destination="kja-Pj-Mal" eventType="touchUpInside" id="8Qr-DE-Wiz"/>
+                                    <action selector="logOutBtnPressed:" destination="kja-Pj-Mal" eventType="touchUpInside" id="x3h-np-1W5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpa-7T-9BN">
+                                <rect key="frame" x="10" y="708" width="370" height="31"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                <connections>
+                                    <action selector="confirmBtnPressed:" destination="kja-Pj-Mal" eventType="touchUpInside" id="8XQ-iI-Mq7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -154,6 +164,9 @@
                             <constraint firstItem="Igg-Gk-LYF" firstAttribute="bottom" secondItem="wNs-Xl-huc" secondAttribute="bottom" constant="10" id="FxI-IZ-Lpp"/>
                             <constraint firstItem="whm-d5-ewE" firstAttribute="leading" secondItem="Igg-Gk-LYF" secondAttribute="leading" constant="50" id="K0l-2o-z8W"/>
                             <constraint firstItem="Igg-Gk-LYF" firstAttribute="trailing" secondItem="wNs-Xl-huc" secondAttribute="trailing" constant="10" id="KWs-cE-L6y"/>
+                            <constraint firstItem="Wpa-7T-9BN" firstAttribute="trailing" secondItem="wNs-Xl-huc" secondAttribute="trailing" id="Llo-g0-wcZ"/>
+                            <constraint firstItem="Wpa-7T-9BN" firstAttribute="leading" secondItem="wNs-Xl-huc" secondAttribute="leading" id="PMS-u8-6Pt"/>
+                            <constraint firstItem="wNs-Xl-huc" firstAttribute="top" secondItem="Wpa-7T-9BN" secondAttribute="bottom" constant="30" id="RYA-RJ-YTX"/>
                             <constraint firstItem="whm-d5-ewE" firstAttribute="centerY" secondItem="xsf-eE-uHE" secondAttribute="centerY" id="mXs-36-y3H"/>
                             <constraint firstItem="whm-d5-ewE" firstAttribute="centerX" secondItem="xsf-eE-uHE" secondAttribute="centerX" id="vgN-ck-IsF"/>
                         </constraints>
