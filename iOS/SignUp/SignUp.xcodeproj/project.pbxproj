@@ -21,6 +21,7 @@
 		8E347FB327D335AD0004657C /* SignUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E347FB227D335AD0004657C /* SignUpUITestsLaunchTests.swift */; };
 		8E347FC227D35B330004657C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E347FC127D35B330004657C /* GoogleService-Info.plist */; };
 		8E347FC427D385EA0004657C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E347FC327D385EA0004657C /* SignUpViewController.swift */; };
+		8E347FC627D63B080004657C /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E347FC527D63B080004657C /* SignOutViewController.swift */; };
 		E3683DFF3107A7E4A250F969 /* Pods_SignUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07773BE531E6EF326AEA12AB /* Pods_SignUp.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		8E347FB227D335AD0004657C /* SignUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8E347FC127D35B330004657C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		8E347FC327D385EA0004657C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		8E347FC527D63B080004657C /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		93A48C52FF5190FAE9429951 /* Pods-SignUp-SignUpUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUp-SignUpUITests.debug.xcconfig"; path = "Target Support Files/Pods-SignUp-SignUpUITests/Pods-SignUp-SignUpUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E6AB015DAFEA1517CD99FD96 /* Pods-SignUp-SignUpUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignUp-SignUpUITests.release.xcconfig"; path = "Target Support Files/Pods-SignUp-SignUpUITests/Pods-SignUp-SignUpUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 				8E347F8E27D335AA0004657C /* SceneDelegate.swift */,
 				8E347F9027D335AA0004657C /* ViewController.swift */,
 				8E347FC327D385EA0004657C /* SignUpViewController.swift */,
+				8E347FC527D63B080004657C /* SignOutViewController.swift */,
 				8E347FC127D35B330004657C /* GoogleService-Info.plist */,
 				8E347F9227D335AA0004657C /* Main.storyboard */,
 				8E347F9827D335AC0004657C /* Assets.xcassets */,
@@ -420,6 +423,7 @@
 				8E347F9727D335AA0004657C /* SignUp.xcdatamodeld in Sources */,
 				8E347F8D27D335AA0004657C /* AppDelegate.swift in Sources */,
 				8E347F8F27D335AA0004657C /* SceneDelegate.swift in Sources */,
+				8E347FC627D63B080004657C /* SignOutViewController.swift in Sources */,
 				8E347FC427D385EA0004657C /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
