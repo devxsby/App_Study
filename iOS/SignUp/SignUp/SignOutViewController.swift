@@ -25,7 +25,7 @@ class SignOutViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
-            self.loginEmail.text = "\(String(describing: user?.email))"
+            self.loginEmail.text = "\(user!.email ?? "")"
         }
     }
     
